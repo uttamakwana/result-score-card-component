@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Main";
+  src: url(assets/fonts/static/HankenGrotesk-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Main-B";
+  src: url(assets/fonts/static/HankenGrotesk-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Main-EB";
+  src: url(assets/fonts/static/HankenGrotesk-ExtraBold.ttf);
+}
+
+body {
+  min-height: 100vh;
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: clamp(375px, 75%, 1300px);
+  /* border: 1px solid black; */
+  border-radius: 2rem;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.card-left,
+.card-right {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
+
+.card-left {
+  /* background-color: hsl(241, 81%, 54%); */
+  background: linear-gradient(
+    to bottom,
+    hsl(252, 100%, 67%),
+    hsl(241, 81%, 54%)
+  );
+  /* height: 100%; */
+  border-radius: 2rem;
+  padding: 2rem;
+  text-align: center;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-left-title {
+  font-family: "Main";
+  color: hsla(241, 100%, 89%, 0.9);
+}
+
+.card-left .circle-score {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 50%;
+  background: linear-gradient(
+    to bottom,
+    hsla(256, 72%, 46%, 1),
+    hsla(241, 72%, 46%, 0)
+  );
+
+  width: 150px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.circle-score .circle-score-text {
+  font-size: 3rem;
+  font-family: "Main-EB";
+  color: hsl(0, 0%, 100%);
+}
+
+.circle-score p:nth-child(2) {
+  font-family: "Main";
+  color: hsla(241, 100%, 89%, 0.9);
+}
+
+.great {
+  font-family: "Main";
+  color: hsl(0, 0%, 100%);
+  font-family: 18px;
+}
+
+.card-left p:last-child {
+  color: hsla(241, 100%, 89%, 0.8);
+  font-family: "Main";
+  padding: 0 1rem;
+}
+
+.card-right {
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.card-right-title {
+  font-size: 18px;
+  font-family: "Main-EB";
+}
+
+.summary-card-container {
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.summary-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-family: "Main";
+}
+
+.summary-card-left {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.summary-card-right {
+  font-family: "Main-B";
+}
+
+.summary-card:first-child {
+  background-color: hsla(0, 100%, 67%, 0.2);
+  color: hsla(0, 100%, 67%, 1);
+}
+
+.summary-card:nth-child(2) {
+  background-color: hsla(39, 100%, 56%, 0.2);
+  color: hsla(39, 100%, 56%, 1);
+}
+.summary-card:nth-child(3) {
+  background-color: hsla(166, 100%, 37%, 0.2);
+  color: hsla(166, 100%, 37%, 1);
+}
+.summary-card:nth-child(4) {
+  background-color: hsla(234, 85%, 45%, 0.2);
+  color: hsla(234, 85%, 45%, 1);
+}
+
+.summary-card-button {
+  border-radius: 1.5rem;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 1rem;
+  font-family: "Main";
+  background: linear-gradient(
+    to bottom,
+    hsl(252, 100%, 67%),
+    hsl(241, 81%, 54%)
+  );
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+
+@media (width <= 768px) {
+  .card {
+    width: 95%;
+  }
+}
+
+@media (width <= 520px) {
+  body {
+    align-items: flex-start;
+    height: auto;
+  }
+  .card {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .card-left,
+  .card-right {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-right {
+    flex: 1;
+  }
+
+  .card-left {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+}
